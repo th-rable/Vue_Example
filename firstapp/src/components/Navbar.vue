@@ -1,8 +1,6 @@
 <template>
     <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Login</a>
+        <router-link to="/">Team수능</router-link>
     </div>
 </template>
 <script>
@@ -14,7 +12,7 @@
 
 <style>
 .menu{
-  background: darkslateblue;
+  background: slateblue;
   padding: 15px;
   border-radius: 5px;
 }
