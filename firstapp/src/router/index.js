@@ -23,6 +23,12 @@ const router = createRouter({
             component: () => import("../components/Home.vue"),
             props:true,
         },
+        { 
+            path: "/user", 
+            name: "user", 
+            component: () => import("../components/UserSetting.vue"),
+            props:true,
+        },
     ], 
 }); 
 export default router;

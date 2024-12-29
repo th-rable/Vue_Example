@@ -11,6 +11,8 @@
 </template>
 <script>
     import Navbar from './Navbar.vue';
+
+
     export default {
         name: 'LoginComponents',
         data(){
@@ -22,13 +24,19 @@
         components:{
             Navbar:Navbar,
         },
+        created(){
+            this.$checklogin().then(()=>{
+                this.$router.push({name:'home'});
+            }).catch(()=>{
+            });
+        },
         methods:{
             login(){
                 const body={
                     id:this.id,
                     psword:this.pw,
                 }
-                fetch('https://rable.duckdns.org/auth/login',{
+                fetch('https://rable.duckdns.org/auth/login/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{
@@ -40,7 +48,10 @@
                     }
                     return response.json();
                 }).then((data)=>{
-                    this.$router.push({name:'home', params: {id:data}});
+                    console.log(data);
+                    this.$cookies.set('id', body.id);
+                    this.$cookies.set('key', data.key);
+                    this.$router.push({name:'home'});
                 }).catch(err=>{
                     alert(err.message);
                 });

@@ -8,7 +8,13 @@
         name: 'RegisterComponents',
         components:{
             Navbar:Navbar,
-        }
+        },
+        created(){
+            this.$checklogin().then(()=>{
+                this.$router.push({name:'home'});
+            }).catch(()=>{
+            });
+        },
     }
 </script>
 <style>
