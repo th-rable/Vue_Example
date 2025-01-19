@@ -31,10 +31,12 @@ const methods={
         })
     }
 }
+const requestURL = 'https://rable.duckdns.org/'
 
 export default{
     name:'globalFxAssets',
     install(Vue){
         Vue.config.globalProperties.$checklogin = methods.checklogin;
+        Vue.config.globalProperties.$requestURL = requestURL;
     }
 }

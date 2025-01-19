@@ -26,7 +26,8 @@
         },
         created(){
             this.$checklogin().then(()=>{
-                this.$router.push({name:'home'});
+                //this.$router.push({name:'home'});
+                window.location.href = '/home';
             }).catch(()=>{
             });
         },
@@ -51,7 +52,7 @@
                     console.log(data);
                     this.$cookies.set('id', body.id);
                     this.$cookies.set('key', data.key);
-                    this.$router.push({name:'home'});
+                    window.location.href = '/home';
                 }).catch(err=>{
                     alert(err.message);
                 });

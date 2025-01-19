@@ -23,7 +23,7 @@
             this.$checklogin().then((data)=>{
                 console.log(data);
             }).catch(()=>{
-                this.$router.push({name:'main'});
+                window.location.href = '/';
             });
         },
         mounted(){
