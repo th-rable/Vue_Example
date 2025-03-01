@@ -1,24 +1,22 @@
 <template>
     <Navbar/>
-    <h1>Team수능 로그인하기</h1>
+    <h1>Team수능 시작하기</h1>
     <div>
-        <input type="text" v-model="id" placeholder="아이디">
+        <p>아이디를 입력해주세요</p>
+        <input type="text" v-model="id" placeholder="아이디" @keyup.enter="idcheck()">
+        
         <br>
-        <input type="password" v-model="pw" placeholder="비밀번호" @keyup.enter="login()">
-        <br>
-        <button @click="login()">✔</button>
+        <button @click="idcheck()">✔</button>
     </div>
 </template>
 <script>
     import Navbar from './Navbar.vue';
-
 
     export default {
         name: 'LoginComponents',
         data(){
             return{
                 id:'',
-                pw:'',
             }
         },
         components:{
@@ -32,12 +30,11 @@
             });
         },
         methods:{
-            login(){
+            idcheck(){
                 const body={
                     id:this.id,
-                    psword:this.pw,
                 }
-                fetch(this.$requestURL+'auth/login/',{
+                fetch('auth/loginid_check/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{
@@ -45,14 +42,16 @@
                     }
                 }).then(response=>{
                     if(!response.ok){
-                        throw new Error('로그인을 실패했어요');
+                        throw new Error('서버에 오류가 발생했어요');
                     }
                     return response.json();
                 }).then((data)=>{
                     console.log(data);
-                    this.$cookies.set('id', body.id);
-                    this.$cookies.set('key', data.key);
-                    window.location.href = '/home';
+                    if(data.result){
+                        window.location.href = '/login?id='+body.id;
+                    }
+                    else window.location.href = '/register?id='+body.id;
+                    
                 }).catch(err=>{
                     alert(err.message);
                 });

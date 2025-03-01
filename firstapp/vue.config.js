@@ -12,5 +12,10 @@ module.exports = {
         port: process.env.GITPOD_WORKSPACE_ID ? 443 : undefined,
       },
     },
+    proxy: {
+      '/':{
+        target: 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
+      }
+    }
   },
 };

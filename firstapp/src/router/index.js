@@ -29,6 +29,12 @@ const router = createRouter({
             component: () => import("../components/UserSetting.vue"),
             props:true,
         },
+        { 
+            path: "/login_start", 
+            name: "login_start", 
+            component: () => import("../components/LoginOrStart.vue"),
+            props:true,
+        },
     ], 
 }); 
 export default router;
