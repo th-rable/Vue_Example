@@ -34,7 +34,7 @@
                 const body={
                     id:this.id,
                 }
-                fetch('auth/loginid_check/',{
+                fetch('api/auth/loginid_check/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{

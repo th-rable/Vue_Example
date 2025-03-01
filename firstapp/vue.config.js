@@ -13,7 +13,7 @@ module.exports = {
       },
     },
     proxy: {
-      '/':{
+      '/api':{
         target: 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
       }
     }

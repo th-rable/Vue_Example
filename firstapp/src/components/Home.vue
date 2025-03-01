@@ -77,7 +77,7 @@
             }).catch(()=>{
                 //this.$router.replace({name:'main'});
                 window.location.href = '/';
-            }).then(()=>fetch(this.$requestURL+'api/getdday/',{
+            }).then(()=>fetch('api/getdday/',{
                 method:'get',
                 headers:{
                 'Content-Type':'application/json'

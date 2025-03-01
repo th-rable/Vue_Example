@@ -8,7 +8,7 @@ const methods={
                     id:this.$cookies.get('id'),
                     key:this.$cookies.get('key'),
                 }
-                fetch('https://rable.duckdns.org/auth/checklogin/',{
+                fetch('api/auth/checklogin/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{

@@ -2,8 +2,6 @@
     <Navbar/>
     <h1>Team수능 로그인하기</h1>
     <div>
-        <input type="text" v-model="id" placeholder="아이디">
-        <br>
         <input type="password" v-model="pw" placeholder="비밀번호" @keyup.enter="login()">
         <br>
         <button @click="login()">✔</button>
@@ -17,7 +15,7 @@
         name: 'LoginComponents',
         data(){
             return{
-                id:'',
+                id:this.$route.query.id,
                 pw:'',
             }
         },
@@ -37,7 +35,7 @@
                     id:this.id,
                     psword:this.pw,
                 }
-                fetch(this.$requestURL+'auth/login/',{
+                fetch('api/auth/login/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{
