@@ -61,7 +61,7 @@
             }).catch(()=>{
             });
             const body={id:this.id};
-            fetch('api/auth/loginid_check/',{
+            fetch(this.$requestURL+'api/auth/loginid_check/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{
@@ -97,7 +97,7 @@
                         name:this.name,
                         grade:this.graderesult
                     }
-                    fetch('/api/auth/register/',{
+                    fetch(this.$requestURL+'/api/auth/register/',{
                         method:'post',
                         body:JSON.stringify(body),
                         headers:{

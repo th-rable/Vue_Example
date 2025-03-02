@@ -15,7 +15,7 @@
                     id:this.$cookies.get('id'),
                     key:this.$cookies.get('key'),
             }
-            fetch('api/auth/logout/',{
+            fetch(this.$requestURL+'api/auth/logout/',{
                 method:'post',
                 body: JSON.stringify(body),
                 headers:{

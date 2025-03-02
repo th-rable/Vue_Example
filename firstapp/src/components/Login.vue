@@ -34,7 +34,7 @@
             const body={
                 id:this.id,
             }
-            fetch('api/auth/getname/',{
+            fetch(this.$requestURL+'api/auth/getname/',{
                 method:'post',
                 body: JSON.stringify(body),
                 headers:{
@@ -61,7 +61,7 @@
                     id:this.id,
                     psword:this.pw,
                 }
-                fetch('api/auth/login/',{
+                fetch(this.$requestURL+'api/auth/login/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{

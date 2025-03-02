@@ -8,7 +8,7 @@ const methods={
                     id:this.$cookies.get('id'),
                     key:this.$cookies.get('key'),
                 }
-                fetch('api/auth/checklogin/',{
+                fetch(requestURL+'api/auth/checklogin/',{
                     method:'post',
                     body: JSON.stringify(body),
                     headers:{
@@ -31,7 +31,7 @@ const methods={
         })
     }
 }
-const requestURL = 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
+const requestURL = 'https://rable.duckdns.org/'
 // real server: 'https://rable.duckdns.org/'
 // test server: 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
 export default{
