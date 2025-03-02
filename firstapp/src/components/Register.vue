@@ -97,7 +97,7 @@
                         name:this.name,
                         grade:this.graderesult
                     }
-                    fetch(this.$requestURL+'/api/auth/register/',{
+                    fetch(this.$requestURL+'api/auth/register/',{
                         method:'post',
                         body:JSON.stringify(body),
                         headers:{
