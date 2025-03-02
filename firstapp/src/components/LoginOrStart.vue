@@ -48,9 +48,9 @@
                 }).then((data)=>{
                     console.log(data);
                     if(data.result){
-                        window.location.href = '/login?id='+body.id;
+                        this.$router.push('/login?id='+body.id);
                     }
-                    else window.location.href = '/register?id='+body.id;
+                    else this.$router.push('/register?id='+body.id);
                     
                 }).catch(err=>{
                     alert(err.message);

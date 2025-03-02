@@ -35,6 +35,12 @@ const router = createRouter({
             component: () => import("../components/LoginOrStart.vue"),
             props:true,
         },
+        { 
+            path: "/logout", 
+            name: "logout", 
+            component: () => import("../components/UserLogout.vue"),
+            props:true,
+        },
     ], 
 }); 
 export default router;

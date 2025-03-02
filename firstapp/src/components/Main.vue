@@ -9,6 +9,14 @@
     import Navbar from './Navbar.vue';
     export default {
         name: 'MainComponents',
+        created(){
+            this.$checklogin().then(()=>{
+                //this.$router.push({name:'home'});
+                window.location.href = '/home';
+                return;
+            }).catch(()=>{
+            });
+        },
         methods:{
             goLogin(){
                 this.$router.push('/login_start');

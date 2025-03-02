@@ -1,7 +1,9 @@
 <template>
     <div>
         <h1>{{id}}의 페이지</h1>
+        <button @click="logout()">로그아웃</button>
     </div>
+
     <p></p>
     <HomeNabar :menu="4"/>
 </template>
@@ -28,6 +30,11 @@
         },
         mounted(){
             
+        },
+        methods:{
+            logout(){
+                window.location.href='/logout';
+            }
         }
     }
 </script>
