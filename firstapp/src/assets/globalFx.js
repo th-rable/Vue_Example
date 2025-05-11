@@ -31,9 +31,10 @@ const methods={
         })
     }
 }
-const requestURL = 'https://rable.duckdns.org/'
+//const requestURL = 'https://rable.duckdns.org/'
+const requestURL = '/'
 // real server: 'https://rable.duckdns.org/'
-// test server: 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
+// test server: 'https://solid-space-happiness-6wjvpj6qp6jhr6qp-8000.app.github.dev/'
 export default{
     name:'globalFxAssets',
     install(Vue){

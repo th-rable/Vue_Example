@@ -1,12 +1,25 @@
 <template>
-    <Navbar/>
-    <h1>Team수능 시작하기</h1>
-    <div>
-        <p>아이디를 입력해주세요</p>
-        <input type="text" v-model="id" placeholder="아이디" @keyup.enter="idcheck()">
-        
-        <br>
-        <button @click="idcheck()">✔</button>
+    
+    <div class="common-layout">
+        <el-container>
+            <el-header>
+                <Navbar/>
+            </el-header>
+            <el-main>
+                <el-space fill wrap direction="vertical" style="width: 100%;">
+                    
+                    <div>
+                        <p>아이디를 입력해주세요</p>
+                        <el-input type="text" v-model="id" placeholder="아이디"
+                            @keyup.enter="idcheck()" style="width: 240px;"/>
+                        
+                        <p></p>
+                        <el-button @click="idcheck()" type="primary" round>다음</el-button>
+                    </div>
+                </el-space>
+                            
+            </el-main>
+        </el-container>
     </div>
 </template>
 <script>

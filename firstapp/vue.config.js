@@ -15,7 +15,7 @@ module.exports = {
     proxy: {
       '/api':{
         //target: 'https://rable.duckdns.org/'
-        target: 'https://expert-carnival-p9x76xv4wq4f6rqj-8000.app.github.dev/'
+        target: 'https://solid-space-happiness-6wjvpj6qp6jhr6qp-8000.app.github.dev/'
       }
     }
   },

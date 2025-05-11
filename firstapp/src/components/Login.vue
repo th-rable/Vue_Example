@@ -1,12 +1,27 @@
 <template>
-    <Navbar/>
-    <h1>Team수능 로그인하기</h1>
-    <div>
-        <p>{{ name }}님, 안녕하세요</p>
-        <input type="password" v-model="pw" placeholder="비밀번호" @keyup.enter="login()">
-        <br>
-        <button @click="login()">✔</button>
+
+    <div class="common-layout">
+        <el-container>
+            <el-header>
+                <Navbar/>
+            </el-header>
+            <el-main>
+                <el-space fill wrap direction="vertical" style="width: 100%;">
+                    <h1>Team수능 로그인하기</h1>
+                    <div>
+                        <p>{{ name }}님, 안녕하세요</p>
+                        <el-input v-model="pw" style="width: 240px;" type="password"
+                            placeholder="비밀번호" @keyup.enter="login()" show-password></el-input>
+                        <p></p>
+                        <el-button @click="login()" type="primary" round>로그인</el-button>
+                    </div>
+                </el-space>
+                            
+            </el-main>
+        </el-container>
     </div>
+    
+    
 </template>
 <script>
     import Navbar from './Navbar.vue';
